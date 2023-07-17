@@ -25,7 +25,7 @@ export const addCiclistas = async (registro) => {
           "Content-Type": "application/json",
         },
       });
-      window.location = "index.html";
+      window.location = "ciclistas.html";
     } catch (error) {
         console.log(error);
     }
@@ -40,7 +40,7 @@ export const deleteCiclistas = async (id) =>{
                 "Content-Type":"application/json",
             }
         });
-        window.location.href = "index.html"
+        window.location.href = "ciclistas.html"
     } catch (error) {
         console.log(error);
     }
@@ -67,7 +67,7 @@ export async function updateCiclistas(data,id){
                 'Content-Type':"application/json",
             },
         });
-        window.location.href = "index.html"
+        window.location.href = "ciclistas.html"
     } catch (error) {
         console.log(error);
     }
