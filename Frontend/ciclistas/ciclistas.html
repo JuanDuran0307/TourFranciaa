@@ -146,10 +146,49 @@
           <button type="button" class="btn btn-secondary color3 border3 headerr" data-bs-dismiss="modal">Cerrar</button>
           <button type="submit" class="btn color5 color-heder headerr" data-bs-toggle="modal"
             data-bs-target="#exampleModal2">Enviar Registro</button>
-        </div>
+        </form>
+          </div>
       </div>
     </div>
   </div>
+
+
+
+    <!-- Modal Edit -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header color1">
+            <h1 class="modal-title fs-5 headerr" id="exampleModal2">Register New Ciclista</h1>
+          </div>
+          <div class="modal-body">
+            <form id="formEditCiclista" class="row g-3"  method="POST">
+              <div class="col-md-12">
+                <label for="nombre" class="form-label headerr">Nombre</label>
+                <input type="text" class="form-control" id="nombreEdit">
+                <input type="text" class="form-control" id="idEdit" style="display: none;">
+              </div> 
+              
+              <div class="col-md-12">
+                <label for="equipo" class="form-label headerr">Equipo</label>
+                <input type="text" class="form-control" id="equipoEdit">
+              </div>
+              <div class="col-md-12">
+                <label for="nacionalidad" class="form-label headerr">Nacionalidad</label>
+                <input type="text" class="form-control" id="nacionalidadEdit">
+              </div>
+      
+              
+          </div>
+          <div class="modal-footer ">
+            <button type="button" class="btn btn-secondary color3 border3 headerr" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn color5 color-heder headerr" data-bs-toggle="modal"
+              data-bs-target="#exampleModal2">Actualizar ciclista</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

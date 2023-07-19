@@ -18,7 +18,7 @@ async function loadEquipo() {
         <th>${nombre}</th>
         <th>${pais}</th>
         <th>${presidente}</th>
-        <th><button type="button" class="boton-Modal btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" detalle= "">
+        <th><button type="button" class="boton-Modal btn btn-outline-primary update" id="${_id}" data-bs-toggle="modal" data-bs-target="#exampleModal2">
         Updtade
         </button></th>
         <th><button type = "button" id="${_id}" class = "btn btn-outline-danger delete">Delete</button></th>
@@ -76,7 +76,7 @@ function borrar(e){
 
 
 //Read One
-const infoCategoria = document.querySelector("tbody");
+const infoCategoria = document.querySelector(".lista");
 infoCategoria.addEventListener("click",getInfo);
 
 async function getInfo(e){
@@ -100,7 +100,7 @@ async function getInfo(e){
 
 
 //Update
-const formEdit = document.querySelector("#formEditCiclista");
+const formEdit = document.querySelector("#formEditEquipos");
 formEdit.addEventListener('submit',actualizar)
 
 function actualizar(e){

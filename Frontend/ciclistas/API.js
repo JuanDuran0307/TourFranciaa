@@ -47,7 +47,7 @@ export const deleteCiclistas = async (id) =>{
 };
 
 //Read One
-export async function selectOne(id) {
+export const selectOne = async (id)=> {
     try {
         const response = await fetch(`${urlOne}/${id}`);
         const result = await response.json();

@@ -142,6 +142,44 @@
           <button type="button" class="btn btn-secondary color3 border3 headerr" data-bs-dismiss="modal">Cerrar</button>
           <button type="submit" class="btn color5 color-heder headerr" data-bs-toggle="modal"
             data-bs-target="#exampleModal2">Enviar Registro</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal Edit-->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header color1">
+          <h1 class="modal-title fs-5 headerr" id="exampleModalLabel2">Register New Equipo</h1>
+        </div>
+        <div class="modal-body">
+          <form id="formEditEquipos" class="row g-3"  method="POST">
+            <div class="col-md-12">
+              <label for="nombre" class="form-label headerr">Nombre</label>
+              <input type="text" class="form-control" id="nombreEdit">
+              <input type="text" class="form-control" id="idEdit" style="display: none;">
+            </div> 
+            
+            <div class="col-md-12">
+              <label for="pais" class="form-label headerr">Pais</label>
+              <input type="text" class="form-control" id="paisEdit">
+            </div>
+            <div class="col-md-12">
+              <label for="presidente" class="form-label headerr">Presidente</label>
+              <input type="text" class="form-control" id="presidenteEdit">
+            </div>
+    
+            
+        </div>
+        <div class="modal-footer ">
+          <button type="button" class="btn btn-secondary color3 border3 headerr" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn color5 color-heder headerr" data-bs-toggle="modal"
+            data-bs-target="#exampleModal2">Actualizar Equipo</button>
+        </form>
         </div>
       </div>
     </div>

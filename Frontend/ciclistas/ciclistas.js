@@ -20,8 +20,8 @@ async function loadCiclistas() {
         <th>${nombre}</th>
         <th>${equipo}</th>
         <th>${nacionalidad}</th>
-        <th><button type="button" class="boton-Modal btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" detalle= "">
-        Updtade
+        <th><button type="button" class="boton-Modal btn btn-outline-primary update" id="${_id}" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+        Upddate
         </button></th>
         <th><button type = "button" id="${_id}" class = "btn btn-outline-danger delete">Delete</button></th>
         
@@ -46,8 +46,7 @@ function insertCiclista(e) {
   const registro = {
     nombre,
     equipo,
-    nacionalidad,
-    edad
+    nacionalidad
   };
 
 
@@ -80,7 +79,7 @@ function borrar(e){
 
 
 //Read One
-const infoCategoria = document.querySelector("tbody");
+const infoCategoria = document.querySelector(".lista");
 infoCategoria.addEventListener("click",getInfo);
 
 async function getInfo(e){
@@ -88,18 +87,16 @@ async function getInfo(e){
         const id = e.target.getAttribute("id");
         const informacion = await selectOne(id);
 
-        const {_id,nombre,equipo,nacionalidad, edad} = informacion;
+        const {_id,nombre,equipo,nacionalidad} = informacion;
 
         const nombreEdit = document.querySelector('#nombreEdit');
         const equipoEdit = document.querySelector('#equipoEdit');
         const nacionalidadEdit = document.querySelector('#nacionalidadEdit');
-        const edadEdit = document.querySelector('#edadEdit');
         const idEdit = document.querySelector('#idEdit');
 
         nombreEdit.value = nombre;
         equipoEdit.value = equipo;
         nacionalidadEdit.value = nacionalidad;
-        edadEdit.value = edad;
         idEdit.value = _id;
     }
 };
@@ -115,13 +112,13 @@ function actualizar(e){
     const nombre = document.querySelector('#nombreEdit').value;
     const equipo = document.querySelector('#equipoEdit').value;
     const nacionalidad = document.querySelector('#nacionalidadEdit').value;
-    const edad = document.querySelector('#edadEdit').value;
+
 
     const datos ={
         nombre,
         equipo,
-        nacionalidad,
-        edad
+        nacionalidad
+    
     }
 
     alert('Datos editados correctamente');
