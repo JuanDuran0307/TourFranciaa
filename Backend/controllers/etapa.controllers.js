@@ -50,9 +50,6 @@ const putEtapa = async (req, res)=>{
         if (req.body.fin) {
             etapa.fin = req.body.fin;
         }
-        if (req.body.distancia) {
-            etapa.distancia = req.body.distancia;
-        }
         if (req.body.tipo) {
             etapa.tipo = req.body.tipo;
         }

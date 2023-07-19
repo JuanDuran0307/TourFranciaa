@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
 //Read
 async function mostrarPremios() {
     const premios = await getPremios();
-    const contenedor = document.querySelector("main");
+    const contenedor = document.querySelector("tbody");
     premios.forEach(params => {
         const {_id,nombre,descripcion,ganador,equipo}= params;
         const rows = document.createElement('tr')
         rows.innerHTML = `
 
         <th>${_id}</th>
-        <th><${nombre}</th>
+        <th>${nombre}</th>
         <th>${descripcion}</th>
         <th>${ganador}</th>
         <th>${equipo}</th>
@@ -63,11 +63,11 @@ function validation(Objeto) {
 
 
 //Delete
-const eliminar = document.querySelector("main");
+const eliminar = document.querySelector("tbody");
 eliminar.addEventListener("click",borrar);
 
 function borrar(e){
-    if (e.target.classList.contains("eliminar")) {
+    if (e.target.classList.contains("delete")) {
         console.log(e.target);
         const idPremio = e.target.getAttribute("id");
         const confir = confirm("Desea eliminar este Premio?");
@@ -79,7 +79,7 @@ function borrar(e){
 
 
 //Read One
-const infoCategoria = document.querySelector("main");
+const infoCategoria = document.querySelector("tbody");
 infoCategoria.addEventListener("click",getInfo);
 
 async function getInfo(e){

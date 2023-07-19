@@ -17,7 +17,7 @@ async function loadCiclistas() {
         rows.innerHTML = `
 
         <th>${_id}</th>
-        <th><${nombre}</th>
+        <th>${nombre}</th>
         <th>${equipo}</th>
         <th>${nacionalidad}</th>
         <th><button type="button" class="boton-Modal btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" detalle= "">
@@ -64,11 +64,11 @@ function validation(Objeto) {
 
 
 //Delete
-const eliminar = document.querySelector("main");
+const eliminar = document.querySelector("tbody");
 eliminar.addEventListener("click",borrar);
 
 function borrar(e){
-    if (e.target.classList.contains("eliminar")) {
+    if (e.target.classList.contains("delete")) {
         console.log(e.target);
         const idCiclista = e.target.getAttribute("id");
         const confir = confirm("Desea eliminar este Ciclista?");
@@ -80,7 +80,7 @@ function borrar(e){
 
 
 //Read One
-const infoCategoria = document.querySelector("main");
+const infoCategoria = document.querySelector("tbody");
 infoCategoria.addEventListener("click",getInfo);
 
 async function getInfo(e){

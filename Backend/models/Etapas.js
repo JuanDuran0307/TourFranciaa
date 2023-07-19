@@ -21,11 +21,6 @@ const etapaSchema = mongoose.Schema({
         require: true,
         trim: true
     },
-    distancia:{
-        type: Number,
-        require: true,
-        trim: true
-    },
     tipo:{
         type: String,
         require: true,

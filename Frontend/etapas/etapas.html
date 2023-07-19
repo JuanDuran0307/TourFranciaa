@@ -27,15 +27,19 @@
         <ul class="navbar-nav  mb-2 mb-lg-0 d-flex justify-content-start ">
           <li class="nav-item  d-flex gap-3 " style="display:flex; align-items: center;">
             <i class="bi bi-journal text-white"></i>
-            <a class="nav-link active texcolor3" aria-current="page" href="./etapas.html" style="cursor:pointer;">Etapas</a>
+            <a class="nav-link active texcolor3" aria-current="page" href="../premios/premios.html" style="cursor:pointer;">Premios</a>
           </li>
           <li class="nav-item  d-flex gap-3 " style="display:flex; align-items: center;">
             <i class="bi bi-person-square text-white"></i>
-            <a class="nav-link active texcolor3" aria-current="page" href="./clientes.html" style="cursor:pointer;">Clientes</a>
+            <a class="nav-link active texcolor3" aria-current="page" href="../ciclistas/ciclistas.js" style="cursor:pointer;">Ciclistas</a>
           </li>
           <li class="nav-item  d-flex gap-3 " style="display:flex; align-items: center;">
             <i class="bi bi-person-square text-white"></i>
-            <a class="nav-link active texcolor3" aria-current="page" href="./empleados.html" style="cursor:pointer;">Empleados</a>
+            <a class="nav-link active texcolor3" aria-current="page" href="../equipos/equipos.html" style="cursor:pointer;">Equipos</a>
+          </li>
+          <li class="nav-item  d-flex gap-3 " style="display:flex; align-items: center;">
+            <i class="bi bi-person-square text-white"></i>
+            <a class="nav-link active texcolor3" aria-current="page" href="../etapas/etapas.html" style="cursor:pointer;">Etapas</a>
           </li>
           <li class="nav-item  d-flex gap-3 " style="display:flex; align-items: center;">
             <i class="bi bi-journal-plus text-white"></i>
@@ -139,10 +143,6 @@
                 <input type="text" class="form-control" id="fin">
               </div>
               <div class="col-md-12">
-                <label for="distancia" class="form-label headerr">Distancia</label>
-                <input type="text" class="form-control" id="distancia">
-              </div>
-              <div class="col-md-12">
                 <label for="tipo" class="form-label headerr">Tipo</label>
                 <input type="text" class="form-control" id="tipo">
               </div>
@@ -153,10 +153,56 @@
           <button type="button" class="btn btn-secondary color3 border3 headerr" data-bs-dismiss="modal">Cerrar</button>
           <button type="submit" class="btn color5 color-heder headerr" data-bs-toggle="modal"
             data-bs-target="#exampleModal2">Enviar Registro</button>
+
+        </form>
         </div>
       </div>
     </div>
   </div>
+
+
+    <!-- Modal Editar -->
+    <div class="modal fade" id="exampleModal21" tabindex="-1" aria-labelledby="exampleModalLabel21" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header color1">
+            <h1 class="modal-title fs-5 headerr" id="exampleModal21">Actualizar Etapa</h1>
+          </div>
+          <div class="modal-body">
+            <form id="formEditEtapas" class="row g-3"  method="POST">
+              <div class="col-md-12">
+                <label for="numero" class="form-label headerr">Numero</label>
+                <input type="text" class="form-control" id="numeroEdit">
+                <input type="text" class="form-control" id="idEdit" style="display: none;">
+              </div> 
+              
+              <div class="col-md-12">
+                <label for="fecha" class="form-label headerr">Fecha</label>
+                <input type="text" class="form-control" id="fechaEdit">
+              </div>
+              <div class="col-md-12">
+                <label for="inicio" class="form-label headerr">Inicio</label>
+                <input type="text" class="form-control" id="inicioEdit">
+              </div>
+              <div class="col-md-12">
+                  <label for="fin" class="form-label headerr">Fin</label>
+                  <input type="text" class="form-control" id="finEdit">
+                </div>
+                <div class="col-md-12">
+                  <label for="tipo" class="form-label headerr">Tipo</label>
+                  <input type="text" class="form-control" id="tipoEdit">
+                </div>
+      
+              
+          </div>
+          <div class="modal-footer ">
+            <button type="button" class="btn btn-secondary color3 border3 headerr" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-outline-primary">Actualizar ciclista</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

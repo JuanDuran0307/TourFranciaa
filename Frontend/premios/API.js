@@ -25,7 +25,7 @@ export const addPremios = async (registro) => {
           "Content-Type": "application/json",
         },
       });
-      window.location = "premio.html";
+      window.location = "premios.html";
     } catch (error) {
         console.log(error);
     }
@@ -40,7 +40,7 @@ export const deletePremios = async (id) =>{
                 "Content-Type":"application/json",
             }
         });
-        window.location.href = "premio.html"
+        window.location.href = "premios.html"
     } catch (error) {
         console.log(error);
     }
@@ -67,7 +67,7 @@ export async function updatePremios(data,id){
                 'Content-Type':"application/json",
             },
         });
-        window.location.href = "premio.html"
+        window.location.href = "premios.html"
     } catch (error) {
         console.log(error);
     }

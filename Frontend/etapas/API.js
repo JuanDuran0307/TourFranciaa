@@ -25,7 +25,7 @@ export const addEtapas = async (registro) => {
           "Content-Type": "application/json",
         },
       });
-      window.location = "etapa.html";
+      window.location = "etapas.html";
     } catch (error) {
         console.log(error);
     }
@@ -40,14 +40,14 @@ export const deleteEtapas = async (id) =>{
                 "Content-Type":"application/json",
             }
         });
-        window.location.href = "etapa.html"
+        window.location.href = "etapas.html"
     } catch (error) {
         console.log(error);
     }
 };
 
 //Read One
-export async function selectOne(id) {
+export const selectOne = async (id)=>{
     try {
         const response = await fetch(`${urlOne}/${id}`);
         const result = await response.json();
@@ -67,7 +67,7 @@ export async function updateEtapas(data,id){
                 'Content-Type':"application/json",
             },
         });
-        window.location.href = "etapa.html"
+        window.location.href = "etapas.html"
     } catch (error) {
         console.log(error);
     }

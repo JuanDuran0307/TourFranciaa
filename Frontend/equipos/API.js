@@ -25,7 +25,7 @@ export const addEquipos = async (registro) => {
           "Content-Type": "application/json",
         },
       });
-      window.location = "equipo.html";
+      window.location = "equipos.html";
     } catch (error) {
         console.log(error);
     }
@@ -40,7 +40,7 @@ export const deleteEquipos = async (id) =>{
                 "Content-Type":"application/json",
             }
         });
-        window.location.href = "equipo.html"
+        window.location.href = "equipos.html"
     } catch (error) {
         console.log(error);
     }
@@ -67,7 +67,7 @@ export async function updateEquipos(data,id){
                 'Content-Type':"application/json",
             },
         });
-        window.location.href = "equipo.html"
+        window.location.href = "equipos.html"
     } catch (error) {
         console.log(error);
     }

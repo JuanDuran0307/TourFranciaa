@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
 //Read
 async function loadEquipo() {
     const equipos = await getEquipos();
-    const contenedor = document.querySelector("main");
+    const contenedor = document.querySelector("tbody");
     equipos.forEach(params => {
         const {_id,nombre,pais,presidente}= params;
         const rows = document.createElement('tr')
         rows.innerHTML = `
 
         <th>${_id}</th>
-        <th><${nombre}</th>
+        <th>${nombre}</th>
         <th>${pais}</th>
         <th>${presidente}</th>
         <th><button type="button" class="boton-Modal btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" detalle= "">
@@ -60,11 +60,11 @@ function validation(Objeto) {
 
 
 //Delete
-const eliminar = document.querySelector("main");
+const eliminar = document.querySelector("tbody");
 eliminar.addEventListener("click",borrar);
 
 function borrar(e){
-    if (e.target.classList.contains("eliminar")) {
+    if (e.target.classList.contains("delete")) {
         console.log(e.target);
         const idEquipo = e.target.getAttribute("id");
         const confir = confirm("Desea eliminar este Equipo?");
@@ -76,7 +76,7 @@ function borrar(e){
 
 
 //Read One
-const infoCategoria = document.querySelector("main");
+const infoCategoria = document.querySelector("tbody");
 infoCategoria.addEventListener("click",getInfo);
 
 async function getInfo(e){

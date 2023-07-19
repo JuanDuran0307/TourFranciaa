@@ -8,20 +8,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
 //Read
 async function mostrarEtapas() {
     const etapas = await getEtapas();
-    const contenedor = document.querySelector("main");
+    const contenedor = document.querySelector("tbody");
     etapas.forEach(params => {
-        const {_id,numero,fecha,inicio,fin,distancia,tipo}= params;
+        const {_id,numero,fecha,inicio,fin,tipo}= params;
         const rows = document.createElement('tr')
         rows.innerHTML = `
 
         <th>${_id}</th>
-        <th><${numero}</th>
+        <th>${numero}</th>
         <th>${fecha}</th>
         <th>${inicio}</th>
         <th>${fin}</th>
-        <th>${distancia}</th>
         <th>${tipo}</th>
-        <th><button type="button" class="boton-Modal btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" detalle= "">
+        <th><button type="button" class="boton-Modal btn btn-outline-primary update" id="${_id}" data-bs-toggle="modal" data-bs-target="#exampleModal21">
         Updtade
         </button></th>
         <th><button type = "button" id="${_id}" class = "btn btn-outline-danger delete">Delete</button></th>
@@ -43,7 +42,6 @@ function insertEtapas(e) {
   const fecha = document.querySelector("#fecha").value;
   const inicio = document.querySelector("#inicio").value;
   const fin = document.querySelector("#fin").value;
-  const distancia = document.querySelector("#distancia").value;
   const tipo = document.querySelector("#tipo").value;
 
   const registro = {
@@ -51,7 +49,6 @@ function insertEtapas(e) {
     fecha,
     inicio,
     fin,
-    distancia,
     tipo
   };
 
@@ -69,11 +66,11 @@ function validation(Objeto) {
 
 
 //Delete
-const eliminar = document.querySelector("main");
+const eliminar = document.querySelector("tbody");
 eliminar.addEventListener("click",borrar);
 
 function borrar(e){
-    if (e.target.classList.contains("eliminar")) {
+    if (e.target.classList.contains("delete")) {
         console.log(e.target);
         const idEtapa = e.target.getAttribute("id");
         const confir = confirm("Desea eliminar esta Etapa?");
@@ -85,21 +82,19 @@ function borrar(e){
 
 
 //Read One
-const infoCategoria = document.querySelector("main");
-infoCategoria.addEventListener("click",getInfo);
+const infoEtapas = document.querySelector(".lista");
+infoEtapas.addEventListener("click",getInfo);
 
 async function getInfo(e){
     if (e.target.classList.contains("update")) {
         const id = e.target.getAttribute("id");
         const informacion = await selectOne(id);
 
-        const {_id,numero,fecha,inicio, fin, distancia, tipo} = informacion;
-
+        const {_id,numero,fecha,inicio, fin,tipo} = informacion;
         const numeroEdit = document.querySelector('#numeroEdit');
         const fechaEdit = document.querySelector('#fechaEdit');
         const inicioEdit = document.querySelector('#inicioEdit');
         const finEdit = document.querySelector('#finEdit');
-        const distanciaEdit = document.querySelector('#distanciaEdit');
         const tipoEdit = document.querySelector('#tipoEdit');
         const idEdit = document.querySelector('#idEdit');
 
@@ -107,16 +102,18 @@ async function getInfo(e){
         fechaEdit.value = fecha;
         inicioEdit.value = inicio;
         finEdit.value = fin;
-        distanciaEdit.value = distancia;
         tipoEdit.value = tipo;
         idEdit.value = _id;
+
+        console.log(informacion);
     }
-};
+
+}; 
 
 
 //Update
 const formEdit = document.querySelector("#formEditEtapas");
-formEdit.addEventListener('submit',actualizar)
+formEdit.addEventListener('submit',actualizar);
 
 function actualizar(e){
     e.preventDefault();
@@ -125,7 +122,6 @@ function actualizar(e){
     const fecha = document.querySelector('#fechaEdit').value;
     const inicio = document.querySelector('#inicioEdit').value;
     const fin = document.querySelector('#finEdit').value;
-    const distancia = document.querySelector('#distanciaEdit').value;
     const tipo = document.querySelector('#tipoEdit').value;
 
     const datos ={
@@ -133,11 +129,10 @@ function actualizar(e){
         fecha,
         inicio,
         fin,
-        distancia,
         tipo
     }
 
     alert('Datos editados correctamente');
 
-    return updateEtapas(datos,id);
+    return updateEtapas(datos, id);
 };
